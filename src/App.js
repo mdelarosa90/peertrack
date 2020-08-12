@@ -4,6 +4,7 @@ import Login from './pages/login'
 import Dashboard from './pages/dashboard'
 import MainLayout from './layouts/MainLayout'
 import Projects from './pages/Projects'
+import ProjectForm from './pages/Projects/ProjectForm';
 import Tasks from './pages/Tasks'
 import {
   BrowserRouter as Router,
@@ -22,6 +23,7 @@ function App() {
           </Route>
           <MainLayout>
             <Route path='/dashboard' exact component={Dashboard} />
+            <Route path='/projectsform' exact component={ProjectForm}/>
             <Route path='/projects' exact component={Projects}/>
             <Route path='/tasks' exact component={Tasks} />
           </MainLayout>

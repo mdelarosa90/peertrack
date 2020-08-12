@@ -1,19 +1,21 @@
-import React, {useState} from "react";
-import clsx from 'clsx';
-import { withStyles } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import List from "@material-ui/core/List";
-import Typography from "@material-ui/core/Typography";
+import Badge from '@material-ui/core/Badge';
 import Divider from "@material-ui/core/Divider";
+import Drawer from "@material-ui/core/Drawer";
 import IconButton from '@material-ui/core/IconButton';
-// https://material-ui.com/style/icons/
-import HomeIcon from "@material-ui/icons/Home";
-import HelpIcon from "@material-ui/icons/HelpOutlined";
+import List from "@material-ui/core/List";
+import { fade, withStyles } from "@material-ui/core/styles";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import HelpIcon from "@material-ui/icons/HelpOutlined";
+// https://material-ui.com/style/icons/
+import HomeIcon from "@material-ui/icons/Home";
 import MenuIcon from '@material-ui/icons/Menu';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import clsx from 'clsx';
+import React, { useState } from "react";
 import NavLink from "./NavLink";
 
 // https://material-ui.com/demos/drawers/#full-height-navigation
@@ -81,7 +83,20 @@ const styles = theme => ({
     container: {
         marginLeft: drawerWidth,
         marginTop: '200px'
-    }
+    },
+    search: {
+      borderRadius: theme.shape.borderRadius,
+      backgroundColor: fade(theme.palette.common.white, 0.15),
+      '&:hover': {
+        backgroundColor: fade(theme.palette.common.white, 0.25),
+      },
+      marginLeft: 0,
+      width: '100%',
+      [theme.breakpoints.up('sm')]: {
+        marginLeft: theme.spacing(1),
+        width: 'auto',
+      },
+    },
 },
 });
 
@@ -108,7 +123,12 @@ function MainLayout(props) {
             Peertrack
           </Typography>
           <div style={{ display: "flex", flex: 1 }} />
-          <Typography>Hello, Prof.</Typography>
+            <IconButton aria-label="show 17 new notifications" color="inherit">
+              <Badge badgeContent={17} color="secondary">
+                <NotificationsIcon />
+              </Badge>
+            </IconButton>
+          <Typography>Hello, Andres Lastra</Typography>
         </Toolbar>
       </AppBar>
       <Drawer

@@ -40,5 +40,19 @@
         "description": "Registro y transporte de ciudadanos durante la pandemia de Covid-19",
         "expirationTime": "2020-11-14",
         "progress": 23
+    },
+    {
+        "id" : 7,
+        "name": "Servientrega",
+        "description": "Despacho y entrega de Mercancías a nivel Nacional",
+        "expirationTime": "2020-11-14",
+        "progress": 98
+    },
+    {
+        "id" : 8,
+        "name": "Coordinadora",
+        "description": "Despacho y entrega de Mercancías a nivel Nacional",
+        "expirationTime": "2020-11-14",
+        "progress": 45
     }
 ]
